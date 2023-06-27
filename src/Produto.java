@@ -6,6 +6,8 @@ public class Produto {
     private double valorUnitario;
     private int quantidade;
     private double valorTotal;
+    private static int idContador =1;
+    private int id;
     private List<String> receita = new ArrayList<>();
     public Produto(String nome, double valorUnitario, int quantidade, List<String>receita) {
         this.nome = nome;
@@ -13,7 +15,13 @@ public class Produto {
         this.quantidade = quantidade;
         this.receita = receita;
         this.valorTotal = valorUnitario * quantidade;
+        this.id = idContador++;
     }
+
+    public int getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -46,9 +54,10 @@ public class Produto {
     }
 
     public String mostrarProduto(){
-        return "Nome do produto: "+ getNome()+
-                "\n Valor: "+ getValorUnitario()+
-                "\n Quantidade: "+ getQuantidade()+
-                "\n Receita: "+ getReceita();
+        return  id+
+                "\nNome do produto: "+ getNome()+
+                "\nValor: "+ getValorUnitario()+
+                "\nQuantidade: "+ getQuantidade()+
+                "\nReceita: "+ getReceita();
     }
 }
