@@ -20,4 +20,10 @@ public class ProdutoController {
         estoqueProdutos.add(new Produto(nome,valorUnitario,quantidade,receita));
     }
 
+    public void procurarProdutos(int indexProduto){
+        if (indexProduto > estoqueProdutos.size()+1){
+            throw new IllegalArgumentException("Produto não encontrado");
+        }
+        System.out.println(estoqueProdutos.get(indexProduto-1).mostrarProduto());
+    }
 }
