@@ -7,10 +7,11 @@ public class Produto {
     private int quantidade;
     private double valorTotal;
     private List<String> receita = new ArrayList<>();
-    public Produto(String nome, double valorUnitario, int quantidade) {
+    public Produto(String nome, double valorUnitario, int quantidade, List<String>receita) {
         this.nome = nome;
         this.valorUnitario = valorUnitario;
         this.quantidade = quantidade;
+        this.receita = receita;
     }
     public String getNome() {
         return nome;
@@ -41,5 +42,12 @@ public class Produto {
     }
     public void setReceita(List<String> receita) {
         this.receita = receita;
+    }
+
+    public String mostrarProduto(){
+        return "Nome do produto: "+ getNome()+
+                "\n Valor: "+ getValorUnitario()+
+                "\n Quantidade: "+ getQuantidade()+
+                "\n Receita: "+ getReceita();
     }
 }
