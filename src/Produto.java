@@ -12,6 +12,7 @@ public class Produto {
         this.valorUnitario = valorUnitario;
         this.quantidade = quantidade;
         this.receita = receita;
+        this.valorTotal = valorUnitario * quantidade;
     }
     public String getNome() {
         return nome;

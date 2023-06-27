@@ -26,4 +26,16 @@ public class ProdutoController {
         }
         System.out.println(estoqueProdutos.get(indexProduto-1).mostrarProduto());
     }
+    public void valorTotal(){
+        double total = 0;
+        for (Produto produto: estoqueProdutos) {
+            total += produto.getValorTotal();
+            System.out.println(produto.getNome() + " -R$ " + produto.getValorTotal() + "\n");
+    }
+        System.out.println("Valor total dos produtos" + total);
+
+
+
 }
+    }
+
